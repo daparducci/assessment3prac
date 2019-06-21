@@ -7,17 +7,17 @@
     
     
    
+
         <table>
             <thead>
                 <th>Description</th>
             </thead>
             <tbody>
-
-                {% for skill in skills %}
+                {% for wish in wishes %}
                 <tr>
-                    <td>>{{skill.description}}</td>
+                    <td>>{{wish.description}}</td>
                     <td>
-                        <form action="{{ skill.id }}/delete/" method="post">
+                        <form action="{{ wish.id }}/delete/" method="post">
                             {% csrf_token %}
                             <button type="submit" class="btn">Remove</button>
                         </form>

@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('create/', views.SkillCreate.as_view(), name='create'),
-    path('<int:pk>/delete/', views.SkillDelete.as_view(), name = 'delete'),
+    path('create/', views.WishCreate.as_view(), name='create'),
+    path('<int:pk>/delete/', views.WishDelete.as_view(), name = 'delete'),
 ]

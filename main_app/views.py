@@ -2,26 +2,24 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView
-from .models import Skill
+from .models import Wish
 
 # Create your views here.
 def home(request):
-    skills = Skill.objects.all()
-    return render(request, 'home.html', {'skills': skills})
+    wishes = Wish.objects.all()
+    print(wishes)
+    return render(request, 'home.html', {'wishes': wishes})
 
 
 
-class SkillCreate(CreateView):
-    model = Skill
+class WishCreate(CreateView):
+    model = Wish
     fields = '__all__'
     success_url = '/'
 
-class SkillDelete(DeleteView):
-    model = Skill
+class WishDelete(DeleteView):
+    model = Wish
     success_url = '/'
 
-    # def form_valid(self, form):
-    #     print(self)
-    #     form.instance.user = self.request.user
-    #     return super().form_valid(form)
+ 
     
