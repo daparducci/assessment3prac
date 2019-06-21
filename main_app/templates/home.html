@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+
+    
+    
+   
+        <table>
+            <thead>
+                <th>Description</th>
+            </thead>
+            <tbody>
+
+                {% for skill in skills %}
+                <tr>
+                    <td>>{{skill.description}}</td>
+                    <td>
+                        <form action="{{ skill.id }}/delete/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td>YOU HAVE NO SKILLS</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endblock %}
+    
